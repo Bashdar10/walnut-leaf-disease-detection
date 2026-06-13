@@ -1,3 +1,16 @@
+---
+title: Walnut Leaf Disease Detection
+emoji: 🌿
+colorFrom: green
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
+# Walnut Leaf Disease Detection
+
+A Flask and PyTorch web application for detecting walnut leaf diseases using a trained SwinCBAM model.
 # Walnut Leaf Disease Detection
 
 A professional Flask-based university final project web application for walnut leaf disease detection using a trained PyTorch **SwinCBAM** model.
