@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}About | Walnut Leaf Disease Detection{% endblock %}
+
+{% block content %}
+<section class="page-header card">
+  <h2>About the Project</h2>
+  <p>Walnut Leaf Disease Detection is a university final project using a Flask API and a trained PyTorch {{ model_name }} model.</p>
+</section>
+
+<section class="about-grid">
+  <article class="card">
+    <h3>Project Overview</h3>
+    <p>The goal of this system is to help identify walnut leaf diseases from uploaded or camera-captured images. The application provides the predicted class, confidence score, management recommendation, downloadable result, and prediction history.</p>
+    <p>The web application is designed with a calm academic dashboard style suitable for demonstrations to professors, classmates, and project evaluators.</p>
+  </article>
+
+  <article class="card metrics-card">
+    <h3>Dataset and Model Information</h3>
+    <dl>
+      <dt>Original images</dt><dd>{{ dataset_info.original_images }}</dd>
+      <dt>Augmented images</dt><dd>{{ dataset_info.augmented_images }}</dd>
+      <dt>Region</dt><dd>{{ dataset_info.region }}</dd>
+      <dt>Collection period</dt><dd>{{ dataset_info.collection_period }}</dd>
+      <dt>Model</dt><dd>{{ model_name }}</dd>
+      <dt>Test accuracy</dt><dd>{{ dataset_info.accuracy }}</dd>
+      <dt>Precision</dt><dd>{{ dataset_info.precision }}</dd>
+      <dt>Recall</dt><dd>{{ dataset_info.recall }}</dd>
+      <dt>F1-score</dt><dd>{{ dataset_info.f1_score }}</dd>
+    </dl>
+  </article>
+
+  <article class="card">
+    <h3>Technology Stack</h3>
+    <p><strong>Backend:</strong> Flask API, PyTorch inference, JSON history storage.</p>
+    <p><strong>Frontend:</strong> HTML, CSS, JavaScript, drag-and-drop upload, browser camera capture, responsive dashboard interface.</p>
+  </article>
+</section>
+{% endblock %}

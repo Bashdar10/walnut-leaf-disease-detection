@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prediction Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; color: #1f2937; margin: 40px; }
+    .report { max-width: 760px; margin: auto; border: 1px solid #d1d5db; padding: 28px; border-radius: 14px; }
+    h1 { color: #14532d; }
+    .row { margin: 12px 0; }
+    .label { font-weight: 700; color: #334155; }
+    .actions { margin-top: 24px; }
+    button { padding: 12px 18px; border-radius: 10px; border: 0; background: #1f8a3b; color: white; cursor: pointer; }
+    @media print { .actions { display: none; } }
+  </style>
+</head>
+<body>
+  <section class="report">
+    <h1>Walnut Leaf Disease Detection</h1>
+    <h2>Prediction Report</h2>
+    <div class="row"><span class="label">Prediction ID:</span> {{ item.id }}</div>
+    <div class="row"><span class="label">Date/Time:</span> {{ item.timestamp }}</div>
+    <div class="row"><span class="label">Predicted Class:</span> {{ item.predicted_class }}</div>
+    <div class="row"><span class="label">Confidence:</span> {{ item.confidence }}%</div>
+    <div class="row"><span class="label">Recommendation:</span> {{ item.recommendation }}</div>
+    <p>This system supports agricultural decision-making and does not replace expert field diagnosis.</p>
+    <div class="actions"><button onclick="window.print()">Print / Save as PDF</button></div>
+  </section>
+</body>
+</html>

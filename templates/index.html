@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="final-dashboard-grid">
+    <section class="dashboard-card upload-card" id="uploadCard">
+        <h2 class="card-title">Upload Walnut Leaf Image</h2>
+        <p class="card-subtitle">Upload a clear image of the walnut leaf for disease prediction.</p>
+
+        <div class="mode-tabs">
+            <button type="button" id="uploadTab" class="tab-btn active">Upload Image</button>
+            <button type="button" id="cameraTab" class="tab-btn">Scan with Camera</button>
+        </div>
+
+        <form id="predictionForm" enctype="multipart/form-data" autocomplete="off">
+            <input type="file" id="imageInput" name="image" accept="image/jpeg,image/jpg,image/png" hidden>
+
+            <div id="uploadPanel" class="upload-panel active">
+                <div id="dropZone" class="drop-zone" role="button" tabindex="0">
+                    <div class="upload-icon">☁</div>
+                    <strong>Drag & drop an image here</strong>
+                    <span>or</span>
+                    <button type="button" id="browseBtn" class="primary-action small-action">Browse Image</button>
+                </div>
+
+                <div class="upload-meta">
+                    <span>Supported formats: JPG, JPEG, PNG</span>
+                    <span class="separator">|</span>
+                    <span>Max size: 10MB</span>
+                </div>
+            </div>
+
+            <div id="cameraPanel" class="camera-panel">
+                <div class="camera-box">
+                    <video id="cameraVideo" autoplay playsinline muted></video>
+                    <canvas id="cameraCanvas" hidden></canvas>
+                    <div id="cameraPlaceholder" class="camera-placeholder">Camera preview will appear here.</div>
+                </div>
+
+                <div class="camera-actions">
+                    <button type="button" id="openCameraBtn" class="primary-action small-action">Open Camera</button>
+                    <button type="button" id="captureBtn" class="primary-action small-action" disabled>Capture Image</button>
+                    <button type="button" id="closeCameraBtn" class="outline-action small-action" disabled>Close Camera</button>
+                </div>
+            </div>
+
+            <div id="selectedFileCard" class="selected-file-card" hidden>
+                <img id="selectedPreview" src="" alt="Selected image preview">
+                <div class="selected-file-text">
+                    <strong id="selectedFileName">No image selected</strong>
+                    <span id="selectedFileStatus">Ready for analysis.</span>
+                </div>
+                <button type="button" id="removeImageBtn" class="outline-action danger-action">Remove Image</button>
+            </div>
+
+            <button type="submit" id="analyzeBtn" class="primary-action analyze-action" disabled>Analyze Leaf</button>
+        </form>
+    </section>
+
+    <section class="dashboard-card result-card" id="resultCard">
+        <h2 class="card-title">Prediction Result</h2>
+        <div id="predictionResult" class="prediction-result-content" aria-live="polite"></div>
+    </section>
+
+    <section class="dashboard-card examples-card" id="examplesCard">
+        <h2 class="card-title">Example Images</h2>
+        <div class="real-example-grid">
+            <div class="example-item">
+                <img src="{{ url_for('static', filename='img/examples/eriophyes.jpg') }}" alt="Eriophyes tristriatus walnut leaf example">
+                <p>Eriophyes<br>tristriatus</p>
+            </div>
+            <div class="example-item">
+                <img src="{{ url_for('static', filename='img/examples/healthy.jpg') }}" alt="Healthy walnut leaf example">
+                <p>Healthy</p>
+            </div>
+            <div class="example-item">
+                <img src="{{ url_for('static', filename='img/examples/macrophomina.jpg') }}" alt="Macrophomina phaseolina walnut leaf example">
+                <p>Macrophomina<br>phaseolina</p>
+            </div>
+            <div class="example-item">
+                <img src="{{ url_for('static', filename='img/examples/stephanitis.jpg') }}" alt="Stephanitis pyri walnut leaf example">
+                <p>Stephanitis<br>pyri</p>
+            </div>
+        </div>
+        <div class="note-box">
+            <strong>ⓘ Note</strong>
+            <p>For better results, upload clear images of the upper side of the leaf captured in good lighting conditions.</p>
+        </div>
+    </section>
+</div>
+{% endblock %}

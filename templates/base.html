@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Walnut Leaf Disease Detection{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand-block sidebar-brand">
+        <div class="logo-mark" aria-hidden="true">🌿</div>
+        <div>
+          <h1>Walnut Leaf Disease Detection</h1>
+          <p>AI-Powered Diagnosis System</p>
+        </div>
+      </div>
+<nav class="sidebar-nav">
+        <a class="nav-item {% if request.path == '/' %}active{% endif %}" href="{{ url_for('index') }}">▦ <span>Dashboard</span></a>
+        <a class="nav-item" href="{{ url_for('index') }}#upload-card">☁ <span>Upload Image</span></a>
+        <a class="nav-item {% if request.path == '/history' %}active{% endif %}" href="{{ url_for('history') }}">◴ <span>History</span></a>
+        <a class="nav-item {% if request.path == '/disease-info' %}active{% endif %}" href="{{ url_for('disease_info') }}">▤ <span>Disease Info</span></a>
+        <a class="nav-item {% if request.path == '/recommendations' %}active{% endif %}" href="{{ url_for('recommendations') }}">⌁ <span>Recommendations</span></a>
+        <a class="nav-item {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('about') }}">ⓘ <span>About</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="small-leaf">☘</div>
+        <div>
+          <strong>{{ model_name }} Model</strong>
+          <span>Version {{ model_version }}</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="brand-block header-brand">
+          <div class="logo-mark" aria-hidden="true">🌿</div>
+          <div>
+            <h1>Walnut Leaf Disease Detection</h1>
+            <p>AI-Powered Diagnosis System</p>
+          </div>
+        </div>
+        <div class="guest-user" aria-label="Guest user menu">👤 Guest User ▾</div>
+      </header>
+
+      <main class="content">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

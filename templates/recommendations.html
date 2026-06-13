@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Recommendations | Walnut Leaf Disease Detection{% endblock %}
+
+{% block content %}
+<section class="page-header card">
+  <h2>Treatment and Management Recommendations</h2>
+  <p>Use these recommendations as supportive guidance and consult agricultural specialists before applying treatments.</p>
+</section>
+
+<section class="recommendation-layout">
+  <article class="card">
+    <h3>Best Practices for Image Capture</h3>
+    <ul class="clean-list">
+      <li>Upload clear images.</li>
+      <li>Use good lighting.</li>
+      <li>Capture the upper leaf surface.</li>
+      <li>Avoid blurry images.</li>
+      <li>Use one leaf as the main subject whenever possible.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>Orchard Management Practices</h3>
+    <ul class="clean-list">
+      <li>Monitor orchards regularly.</li>
+      <li>Remove heavily infected leaves.</li>
+      <li>Improve sanitation and reduce plant stress.</li>
+      <li>Consult agricultural specialists before using treatments.</li>
+      <li>Do not consider any result as guaranteed agricultural certainty.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="info-grid spaced">
+  {% for name, text in recommendations.items() %}
+  <article class="card info-card">
+    <h3>{{ name }}</h3>
+    <p>{{ text }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

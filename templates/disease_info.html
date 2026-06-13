@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Disease Info | Walnut Leaf Disease Detection{% endblock %}
+
+{% block content %}
+<section class="page-header card">
+  <h2>Disease Information</h2>
+  <p>This page explains the supported walnut leaf classes and common visual indicators.</p>
+</section>
+
+<section class="info-grid">
+  {% for disease in disease_details %}
+  <article class="card info-card">
+    <div class="section-heading compact">
+      <span class="green-accent"></span>
+      <h3>{{ disease.name }}</h3>
+    </div>
+    <p><strong>Type:</strong> {{ disease.type }}</p>
+    <p><strong>Visual symptoms:</strong> {{ disease.symptoms }}</p>
+    <p><strong>Suggested management:</strong> {{ disease.management }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+<aside class="card note-card wide-note">
+  <strong>Important note</strong>
+  <p>The system supports decision-making but does not replace agricultural experts or field diagnosis.</p>
+</aside>
+{% endblock %}

@@ -1,0 +1,9 @@
+Flask
+Werkzeug
+gunicorn
+torch
+torchvision
+Pillow
+numpy
+reportlab
+timm

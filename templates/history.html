@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card page-card">
+  <div class="history-header" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;">
+    <h2 class="section-title" style="margin:0;">Prediction History</h2>
+
+    {% if history %}
+    <form method="post" action="{{ url_for('clear_history_route') }}" onsubmit="return confirm('Are you sure you want to delete all prediction history?');">
+      <button type="submit" class="danger-btn" style="background:#dc2626;color:#fff;border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;">
+        Delete All History
+      </button>
+    </form>
+    {% endif %}
+  </div>
+
+  {% if history %}
+    <div class="history-list">
+      {% for item in history %}
+      <div class="history-item" style="display:flex;gap:16px;align-items:center;border:1px solid #dbe7df;border-radius:14px;padding:14px;margin-bottom:14px;background:#fff;">
+        {% if item.image_url %}
+        <img src="{{ item.image_url }}" alt="{{ item.filename }}" style="width:120px;height:90px;object-fit:cover;border-radius:10px;border:1px solid #e5e7eb;">
+        {% endif %}
+
+        <div style="flex:1;min-width:220px;">
+          <h3 style="margin:0 0 6px 0;">{{ item.predicted_class_display or item.predicted_class }}</h3>
+          <p style="margin:4px 0;"><strong>Confidence:</strong> {{ item.confidence }}%</p>
+          <p style="margin:4px 0;color:#6b7280;">{{ item.timestamp }}</p>
+          {% if item.recommendation %}
+          <p style="margin:8px 0;color:#374151;">{{ item.recommendation }}</p>
+          {% endif %}
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+          <a href="{{ url_for('download_result', history_id=item.id) }}" class="secondary inline" style="text-decoration:none;border:1px solid #b7dfc4;color:#0b5a32;border-radius:10px;padding:9px 12px;font-weight:700;">
+            Download Result
+          </a>
+
+          <form method="post" action="{{ url_for('delete_history', history_id=item.id) }}" onsubmit="return confirm('Delete this prediction from history?');">
+            <button type="submit" class="danger-btn" style="background:#dc2626;color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer;">
+              Delete
+            </button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="muted">No predictions yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

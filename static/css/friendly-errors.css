@@ -1,0 +1,244 @@
+/* Friendly error labels and polished buttons for Walnut Leaf Disease Detection */
+:root {
+  --friendly-green: #14843b;
+  --friendly-green-dark: #0b5f2a;
+  --friendly-green-soft: #eaf7ef;
+  --friendly-red: #b42318;
+  --friendly-red-soft: #fff1f0;
+  --friendly-red-border: #fecaca;
+  --friendly-text: #172033;
+  --friendly-muted: #667085;
+}
+
+/* Modern button polish */
+button,
+.btn,
+.tab-btn,
+.upload-tab,
+.camera-tab,
+#analyzeBtn,
+#analyzeButton,
+.analyze-btn,
+.browse-btn,
+.upload-btn,
+.remove-btn,
+.capture-btn,
+.camera-btn,
+a.btn {
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease !important;
+}
+
+button:hover,
+.btn:hover,
+.tab-btn:hover,
+.upload-tab:hover,
+.camera-tab:hover,
+#analyzeBtn:hover,
+#analyzeButton:hover,
+.analyze-btn:hover,
+.browse-btn:hover,
+.upload-btn:hover,
+.remove-btn:hover,
+.capture-btn:hover,
+.camera-btn:hover,
+a.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(20, 132, 59, 0.18) !important;
+}
+
+button:active,
+.btn:active,
+.tab-btn:active,
+.upload-tab:active,
+.camera-tab:active,
+#analyzeBtn:active,
+#analyzeButton:active,
+.analyze-btn:active,
+.browse-btn:active,
+.upload-btn:active,
+.remove-btn:active,
+.capture-btn:active,
+.camera-btn:active,
+a.btn:active {
+  transform: translateY(0);
+}
+
+#analyzeBtn,
+#analyzeButton,
+.analyze-btn,
+.browse-btn,
+.upload-btn {
+  background: linear-gradient(135deg, #159447, #0f7a37) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  box-shadow: 0 12px 28px rgba(21, 148, 71, 0.22) !important;
+}
+
+.remove-btn,
+button.remove-image,
+#removeImageBtn,
+#removeBtn {
+  background: #ffffff !important;
+  color: #b42318 !important;
+  border: 1px solid #fecaca !important;
+  box-shadow: 0 8px 18px rgba(180, 35, 24, 0.08) !important;
+}
+
+.remove-btn:hover,
+button.remove-image:hover,
+#removeImageBtn:hover,
+#removeBtn:hover {
+  background: #fff1f0 !important;
+  border-color: #fda29b !important;
+}
+
+/* Friendly inline alert inside the result card */
+.friendly-alert-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff7f6, #fff1f0);
+  border: 1px solid var(--friendly-red-border);
+  color: var(--friendly-text);
+  box-shadow: 0 14px 35px rgba(180, 35, 24, 0.10);
+  animation: friendlySlideIn 0.22s ease-out;
+}
+
+.friendly-alert-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fee4e2;
+  color: var(--friendly-red);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.friendly-alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.friendly-alert-title {
+  font-weight: 900;
+  color: var(--friendly-red);
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.friendly-alert-message {
+  color: #344054;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.friendly-alert-close {
+  border: 0 !important;
+  background: rgba(180, 35, 24, 0.08) !important;
+  color: var(--friendly-red) !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Floating toast replacement for browser alert */
+.friendly-toast-wrap {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 99999;
+  width: min(430px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.friendly-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #d7eadc;
+  color: var(--friendly-text);
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.18);
+  backdrop-filter: blur(10px);
+  animation: friendlyToastIn 0.25s ease-out;
+}
+
+.friendly-toast .friendly-alert-title {
+  color: var(--friendly-green-dark);
+}
+
+.friendly-toast .friendly-alert-icon {
+  background: var(--friendly-green-soft);
+  color: var(--friendly-green);
+}
+
+.friendly-toast.error {
+  border-color: var(--friendly-red-border);
+}
+
+.friendly-toast.error .friendly-alert-title {
+  color: var(--friendly-red);
+}
+
+.friendly-toast.error .friendly-alert-icon {
+  background: #fee4e2;
+  color: var(--friendly-red);
+}
+
+.friendly-toast-close {
+  border: 0 !important;
+  background: #f2f4f7 !important;
+  color: #344054 !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+@keyframes friendlySlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes friendlyToastIn {
+  from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .friendly-toast-wrap {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+
+  .friendly-alert-box,
+  .friendly-toast {
+    padding: 12px;
+    border-radius: 14px;
+  }
+}
