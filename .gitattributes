@@ -53,3 +53,4 @@ static/uploads/20260613101420_5c9d992e54f64b8196be6a90e5a2eb98.jpg filter=lfs di
 static/uploads/20260613101438_d7f78ac3b3244cb1a77ab89baa81cbd5.jpg filter=lfs diff=lfs merge=lfs -text
 static/uploads/20260613101449_3cd7923eb0a84679810f608f3cd7ad25.jpg filter=lfs diff=lfs merge=lfs -text
 static/uploads/20260613121555_e00a32c6e7d84226bef30dd8cc1b82d5.jpg filter=lfs diff=lfs merge=lfs -text
+models/*.pth filter=lfs diff=lfs merge=lfs -text
