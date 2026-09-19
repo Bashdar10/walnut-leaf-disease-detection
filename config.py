@@ -42,7 +42,7 @@ RECOMMENDATIONS = {
 }
 
 DATASET_INFO = {
-    "original_images": "3,839",
+    "original_images": "3,771",
     "augmented_images": "23,788",
     "region": "Hawraman–Halabja, Iraqi Kurdistan",
     "collection_period": "Summer 2025",

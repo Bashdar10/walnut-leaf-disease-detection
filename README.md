@@ -88,8 +88,7 @@ walnut-leaf-disease-webapp/
 
 ## Dataset and Model Context
 
-- Original images: **3,839**
-- Augmented images: **23,788**
+- Original images: **3,771**
 - Region: **Hawraman–Halabja, Iraqi Kurdistan**
 - Collection period: **Summer 2025**
 - Model: **SwinCBAM**
@@ -186,7 +185,7 @@ Example response:
 {
   "success": true,
   "predicted_class": "Macrophomina phaseolina",
-  "confidence": 92.4,
+  "confidence": 98.4,
   "recommendation": "...",
   "image_url": "/static/uploads/example.jpg",
   "history_id": "..."

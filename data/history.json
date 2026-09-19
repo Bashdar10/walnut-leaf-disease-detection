@@ -1,0 +1,56 @@
+[
+  {
+    "id": "abfdf57b3bc943d78764275225fc20a0",
+    "filename": "20260817052633_e178a9b68a0f4edab86cb2b0bb2c3699.jpg",
+    "image_url": "/static/uploads/20260817052633_e178a9b68a0f4edab86cb2b0bb2c3699.jpg",
+    "predicted_class": "Macrophomina phaseolina",
+    "confidence": 99.87,
+    "recommendation": "Symptoms may indicate fungal infection with necrotic lesions or dark tissue. Remove infected leaves, improve orchard sanitation, avoid water stress, and consult an agricultural specialist.",
+    "timestamp": "2026-08-17T05:26:34Z"
+  },
+  {
+    "id": "6c850f724a364ccca2ed3ecffac4e599",
+    "filename": "20260817050616_20450bc1ced24f528ab56f04f7108623.jpg",
+    "image_url": "/static/uploads/20260817050616_20450bc1ced24f528ab56f04f7108623.jpg",
+    "predicted_class": "Macrophomina phaseolina",
+    "confidence": 98.16,
+    "recommendation": "Symptoms may indicate fungal infection with necrotic lesions or dark tissue. Remove infected leaves, improve orchard sanitation, avoid water stress, and consult an agricultural specialist.",
+    "timestamp": "2026-08-17T05:06:20Z"
+  },
+  {
+    "id": "d53948bb29de42839cfe2dcbb3b09385",
+    "filename": "20260812202351_bfc7f167e7bc4293ba483f3646786ccc.jpg",
+    "image_url": "/static/uploads/20260812202351_bfc7f167e7bc4293ba483f3646786ccc.jpg",
+    "predicted_class": "Healthy",
+    "confidence": 99.96,
+    "recommendation": "The leaf appears healthy. Continue regular monitoring and maintain good orchard management practices.",
+    "timestamp": "2026-08-12T20:23:52Z"
+  },
+  {
+    "id": "eb372115ffac4f69ad0167d94a8b2b7d",
+    "filename": "20260812202248_62f5254d28594b1cb82934d3a12b20cb.png",
+    "image_url": "/static/uploads/20260812202248_62f5254d28594b1cb82934d3a12b20cb.png",
+    "predicted_class": "Macrophomina phaseolina",
+    "confidence": 95.03,
+    "recommendation": "Symptoms may indicate fungal infection with necrotic lesions or dark tissue. Remove infected leaves, improve orchard sanitation, avoid water stress, and consult an agricultural specialist.",
+    "timestamp": "2026-08-12T20:22:49Z"
+  },
+  {
+    "id": "83fe3b2889a44d7fb8d8c7a6d8eeccc8",
+    "filename": "20260812202233_7a24e0f8cced433d849119fc3684c4cb.png",
+    "image_url": "/static/uploads/20260812202233_7a24e0f8cced433d849119fc3684c4cb.png",
+    "predicted_class": "Macrophomina phaseolina",
+    "confidence": 87.87,
+    "recommendation": "Symptoms may indicate fungal infection with necrotic lesions or dark tissue. Remove infected leaves, improve orchard sanitation, avoid water stress, and consult an agricultural specialist.",
+    "timestamp": "2026-08-12T20:22:33Z"
+  },
+  {
+    "id": "3e63c0b2d34f41b0842ad2fe7c85c627",
+    "filename": "20260812202218_9abb246612df4e9e9e3566ff8d5433f4.png",
+    "image_url": "/static/uploads/20260812202218_9abb246612df4e9e9e3566ff8d5433f4.png",
+    "predicted_class": "Eriophyes tristriatus",
+    "confidence": 67.33,
+    "recommendation": "Symptoms may indicate mite damage such as galls, blistering, or leaf deformation. Remove heavily affected leaves and consult an agricultural specialist for suitable mite management.",
+    "timestamp": "2026-08-12T20:22:19Z"
+  }
+]
